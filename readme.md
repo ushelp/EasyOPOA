@@ -30,9 +30,16 @@ EasyOPOA是一个进行OPOA程序开发的框架，为OPOA程序开发定义出�
 
 6. 支持动作记忆功能，能够记录最后访问的动作，实现OPOA动作恢复。
 
-7. 同时兼容各种浏览器（Trident、Gecko、Webkit、Presto），支持多系统和平台应用（PC，TabletPC，Mobile）。
+7. 支持AMD规范 
 
-EasyOPOA 框架让OPOA程序的具体内部结构对开发和使用者完全透明，同时它既满足了客户对传统Web应用的使用感受的需要，又兼顾了对开发人员良好的使用体验和对搜索引擎的友好。能将繁琐混乱的OPOA程序，变得**有序、统一、标准**，便于维护管理，将开发精力更多集中在业务上。
+8. 同时兼容各种浏览器（Trident、Gecko、Webkit、Presto），支持多系统和平台应用（PC，TabletPC，Mobile）。
+
+
+
+
+使用框架编程有助于将公共问题统一解决，在大项目时能构建更加**有序、统一、标准**的项目；在框架一定的基础之上进行开发，能将开发**精力更多集中在具体业务**上。也对程序日后的**拓展和维护**有很大帮助。
+
+EasyOPOA 框架让OPOA程序的具体内部结构对开发和使用者完全透明，同时它既满足了客户对传统Web应用的使用感受的需要，又能将开发人员从繁琐混乱没有标准的的OPOA程序抽离，带来良好的使用体验，同时兼顾对搜索引擎的友好。
 
 EasyOPOA 秉承了作者始终坚持的“**More Easy, More Powerful.**”追求理念：轻量，简单，灵活，全面。在提供强大全面功能的前提下并未限制使用者在开发上的灵活性。
 
@@ -1767,6 +1774,64 @@ var opoa={
 	prevent:false;
 }
 ```
+
+
+
+## 22、模块化编程支持——AMD规范
+
+EasyOPOA支持模块化编程， 并支持AMD（Asynchronous Module Definition，异步模块定义）规范。
+
+EasyOPOA依赖`jQuery`，但并不绝对依赖`jquery.cookie`和`json2`（仅仅在需要使用动作记忆功能时需要）。
+
+`jQuery`和`jquery.cookie`内部都已经提供了对AMD规范的支持，但`json2`还并未支持任何规范。所以对于`json2`可以直接引入，或根据相应模块定义规范进行改造。
+
+
+### 1、AMD支持
+
+
+**home.jsp:**
+
+```html
+<!-- 由于json2并未支持AMD规范，直接引入（也可自行改造，具体参见AMD规范） -->
+<script type="text/javascript" src="js/json2.js"></script>
+<!-- 加载主文件模块（入口模块） -->
+<script src="amd/require.min.js" data-main="js/main_amd"></script>
+```
+
+
+**js/main_amd.js：**
+
+```JS
+//配置jquery和jqueryCookie路径
+require.config({
+	paths:{
+		"jquery":"jquery-1.10.2.min",
+		"jqueryCookie":"jquery.cookie"
+	}
+});
+
+//引入依赖，加载模块(jqueryCookie为可选模块)
+//EasyOPOA的引擎文件内部已经引用了jquery的依赖
+//所以如果不需要在启动模块中使用jquery，也可以不引入jquery
+require(['easy.opoa','jquery','jqueryCookie'],function(EasyOPOA,$){
+	//……
+}
+```
+
+**WebRoot文件结构：**
+```
++amd
+	require.min.js
++js
+    main_amd.js
+	jquery-1.10.2.min.js
+    jquery.cookie.js
+	json2.js
+```	
+
+
+
+
 
 
 ## 结束

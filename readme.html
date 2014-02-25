@@ -313,10 +313,13 @@ img {
 </li>
 <li><p>支持动作记忆功能，能够记录最后访问的动作，实现OPOA动作恢复。</p>
 </li>
+<li><p>支持AMD规范 </p>
+</li>
 <li><p>同时兼容各种浏览器（Trident、Gecko、Webkit、Presto），支持多系统和平台应用（PC，TabletPC，Mobile）。</p>
 </li>
 </ol>
-<p>EasyOPOA 框架让OPOA程序的具体内部结构对开发和使用者完全透明，同时它既满足了客户对传统Web应用的使用感受的需要，又兼顾了对开发人员良好的使用体验和对搜索引擎的友好。能将繁琐混乱的OPOA程序，变得<strong>有序、统一、标准</strong>，便于维护管理，将开发精力更多集中在业务上。</p>
+<p>使用框架编程有助于将公共问题统一解决，在大项目时能构建更加<strong>有序、统一、标准</strong>的项目；在框架一定的基础之上进行开发，能将开发<strong>精力更多集中在具体业务</strong>上。也对程序日后的<strong>拓展和维护</strong>有很大帮助。</p>
+<p>EasyOPOA 框架让OPOA程序的具体内部结构对开发和使用者完全透明，同时它既满足了客户对传统Web应用的使用感受的需要，又能将开发人员从繁琐混乱没有标准的的OPOA程序抽离，带来良好的使用体验，同时兼顾对搜索引擎的友好。</p>
 <p>EasyOPOA 秉承了作者始终坚持的“<strong>More Easy, More Powerful.</strong>”追求理念：轻量，简单，灵活，全面。在提供强大全面功能的前提下并未限制使用者在开发上的灵活性。</p>
 <h3 id="-http-www-lightfeel-com-easy-easyopoa-zh-cn-index-jsp-easyopoa-"><a href="http://www.lightfeel.com/easy/easyopoa/zh-cn/index.jsp" title="EasyOPOA官网主页">官网主页</a></h3>
 <hr>
@@ -1364,10 +1367,43 @@ var opoa={
 
     prevent:false;
 }</code></pre>
+<h2 id="22-amd-">22、模块化编程支持——AMD规范</h2>
+<p>EasyOPOA支持模块化编程， 并支持AMD（Asynchronous Module Definition，异步模块定义）规范。</p>
+<p>EasyOPOA依赖<code>jQuery</code>，但并不绝对依赖<code>jquery.cookie</code>和<code>json2</code>（仅仅在需要使用动作记忆功能时需要）。</p>
+<p><code>jQuery</code>和<code>jquery.cookie</code>内部都已经提供了对AMD规范的支持，但<code>json2</code>还并未支持任何规范。所以对于<code>json2</code>可以直接引入，或根据相应模块定义规范进行改造。</p>
+<h3 id="1-amd-">1、AMD支持</h3>
+<p><strong>home.jsp:</strong></p>
+<pre><code class="lang-html">&lt;!-- 由于json2并未支持AMD规范，直接引入（也可自行改造，具体参见AMD规范） --&gt;
+&lt;script type=&quot;text/javascript&quot; src=&quot;js/json2.js&quot;&gt;&lt;/script&gt;
+&lt;!-- 加载主文件模块（入口模块） --&gt;
+&lt;script src=&quot;amd/require.min.js&quot; data-main=&quot;js/main_amd&quot;&gt;&lt;/script&gt;</code></pre>
+<p><strong>js/main_amd.js：</strong></p>
+<pre><code class="lang-JS">//配置jquery和jqueryCookie路径
+require.config({
+    paths:{
+        &quot;jquery&quot;:&quot;jquery-1.10.2.min&quot;,
+        &quot;jqueryCookie&quot;:&quot;jquery.cookie&quot;
+    }
+});
+
+//引入依赖，加载模块(jqueryCookie为可选模块)
+//EasyOPOA的引擎文件内部已经引用了jquery的依赖
+//所以如果不需要在启动模块中使用jquery，也可以不引入jquery
+require([&#39;easy.opoa&#39;,&#39;jquery&#39;,&#39;jqueryCookie&#39;],function(EasyOPOA,$){
+    //……
+}</code></pre>
+<p><strong>WebRoot文件结构：</strong></p>
+<pre><code>+amd
+    require.min.js
++js
+    main_amd.js
+    jquery-1.10.2.min.js
+    jquery.cookie.js
+    json2.js</code></pre>
 <h2 id="-">结束</h2>
 <p>如果您有更好意见，建议或想法，请联系我。</p>
 <p><a href="http://www.lightfeel.com/easy/easyopoa/zh-cn/index.jsp#demo" title="在线 Demo">在线Demo</a></p>
-<p>联系、反馈、定制、培训 Email：<a href="&#109;&#97;&#x69;&#x6c;&#116;&#x6f;&#58;&#x69;&#110;&#46;&#x74;&#104;&#x69;&#x6e;&#107;&#64;&#103;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#111;&#x6d;">&#x69;&#110;&#46;&#x74;&#104;&#x69;&#x6e;&#107;&#64;&#103;&#109;&#x61;&#105;&#x6c;&#46;&#x63;&#111;&#x6d;</a></p>
+<p>联系、反馈、定制、培训 Email：<a href="&#109;&#97;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x69;&#110;&#46;&#x74;&#104;&#105;&#x6e;&#x6b;&#x40;&#x67;&#109;&#97;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;">&#x69;&#110;&#46;&#x74;&#104;&#105;&#x6e;&#x6b;&#x40;&#x67;&#109;&#97;&#105;&#x6c;&#x2e;&#x63;&#111;&#x6d;</a></p>
 <p><a href="https://me.alipay.com/inthink" target="_blank"><br><img src="http://www.lightfeel.com/easy/images/donation.png" alt="通过支付宝捐赠" title="通过支付宝捐赠" height="37" width="150"></img><br></a></p>
 
 </body>
