@@ -1,16 +1,16 @@
 # EasyOPOA 框架API
 
-EasyOPOA框架秉持Easy的核心思想，为了保证对开发人员的友好，API非常简单，仅暴漏了有限的几个功能性API。
+**EasyOPOA框架秉持Easy的核心思想，为了保证对开发人员的友好，API非常简单，仅暴漏了有限的几个功能性API。**
 
 EasyOPOA框架的API主要分为两类：
 
-1. OPOA实例（OPOA Instance）定义属性（11个）
+**1. OPOA实例（OPOA Instance）定义属性（11个）**
 
- 创建OPOA实例的API。EasyOPOA以Hash动作实例为框架核心，OPOA实例是Hash动作实例的三大组成元素（hash，url，OPOAInstance）之一。
+ 创建OPOA实例的属性API。EasyOPOA以Hash动作实例为框架核心，OPOA实例是Hash动作实例的三大组成元素（hash，url，OPOAInstance）之一。
 
-2. EasyOPOA框架API（12个）
+**2. EasyOPOA框架API（12个）**
 
- 系统级的全局API
+ 系统级的全局API。
 
 
 -----------------
@@ -113,21 +113,22 @@ EasyOPOA框架暴漏了12个系统级的全局API。
 
  - ### EasyOPOA.Configs 
  
- `EasyOPOA.Configs`保存了OPOA实例属性全局的默认值。OPOA实例配置参数的全局默认值，均可以通过`EasyOPOA.Configs`来重新设置。示例：
+ `EasyOPOA.Configs`保存了OPOA实例属性全局的默认值。OPOA实例配置参数的全局默认值，均可以通过`EasyOPOA.Configs`来重新设置。
 
- ```JS	
-// 如果从服务器返回的数据中没有找到find指定的内容，则显示所有
-EasyOPOA.Configs.notFound="all";
-// 获取url值的DOM属性
-EasyOPOA.Configs.url="href";
+ > 示例：
+ >  ```JS	
+> // 如果从服务器返回的数据中没有找到find指定的内容，则显示所有
+> EasyOPOA.Configs.notFound="all";
+> // 获取url值的DOM属性
+> EasyOPOA.Configs.url="href";
 	...
 ```
 
 
  - ### EasyOPOA.cookieLast
- 
+```JS 
  = boolean：true || false
-
+```
  利用cookie，开启动作定位的记忆功能(依赖jquery.cookie.js和json2.js),能够记录最后访问的动作，实现OPOA动作恢复。
 
  默认值：false。
@@ -135,9 +136,9 @@ EasyOPOA.Configs.url="href";
 
 
 - ### EasyOPOA.start
-
- = function(opoaList, actionMaps)
-
+```JS 
+ = function(opoaList, [actionMaps])
+```
  核心方法，启动EasyOPOA。
 
  函数可传入两个参数：opoaList（OPOA实体配置集合）、actionMaps（hash动作映射对象列表）。
@@ -182,10 +183,10 @@ EasyOPOA.Configs.url="href";
 > EasyOPOA.start(opoaList,actionMap2);
 > ```
 
- - ### EasyOPOA.notHash
- 
- = function(hash)
-
+- ### EasyOPOA.notHash
+```JS
+ = function([hash])
+```
  如果用户请求的hash未注册不存在时的处理函数（如用户保存的书签已经失效或不存在）。
 
  函数可传入一个参数：用户访问的无效hash名称。
@@ -194,9 +195,9 @@ EasyOPOA.Configs.url="href";
 
 
  - ### EasyOPOA.addActionMap :
- 
+```JS
   = function(hash, url, opoa)
-
+```
  addActionMap(hash,url,opoa)函数可添加一个新的自定义hash动作映射。
 
  函数可传入三个参数：自定义hash名称、自定义url、自定义opoa实例。
@@ -204,9 +205,9 @@ EasyOPOA.Configs.url="href";
 
 
  - ### EasyOPOA.addActionUrlErrors :
- 
+```JS
   = function(hash, urlErrorsObject) 
-
+```
  addActionUrlErrors(hash, urlErrorsObject)函数为hash动作定义HTTP代码响应对象。
 
  函数可传入两个参数：hash名称、HTTP代码响应对象。
@@ -223,16 +224,16 @@ EasyOPOA.Configs.url="href";
 > ```
 
 - ### EasyOPOA.addActionLoadings
-
+```JS
  = function(hash, loadingObject)
-
+```
  addActionLoadings(hash, loadingObject)函数为hash动作指定loading处理对象。
 
  函数可传入两个参数：hash名称、loading处理对象。
 
- >   **loading处理对象：**
+ >   **loadingObject对象：**
 >   
-> loading处理对象包含4个loading状态：开始，成功，出错，结束。
+> loadingObject处理对象包含4个loading状态：开始，成功，出错，结束。
 > 不强迫要求同时定义4个状态，定义时，可根据需要仅定义部分。
 >
 >  ```JS
@@ -250,54 +251,56 @@ EasyOPOA.Configs.url="href";
 
 
 - ### EasyOPOA.home
-  
- = function(hash, postData)
-
+```JS
+ = function(hash, [postData])
+```
  通过hash名称动态加载首页。
 
  函数可传入两个参数：hash名称、提交到服务器的数据postData。
 
 
 - ### EasyOPOA.homeUrl
-  
- = function(url, opoaInstance, postData)
-
+```JS
+ = function(url, opoaInstance, [postData])
+```
  通过url动态加载首页。
 
  函数可传入两个参数：url、opoaInstance、提交到服务器的数据postData。
 
 
 - ### EasyOPOA.homeFun
-
+```JS
   = function()
-
- 当OPOA没有从Ajax加载首页时，默认显示首页的处理函数。
- 主要用于首页为静态内容的场景下，浏览器后退到首页时，首页静态内容无法更新问题。可在此函数中设置静态首页显示的内容。示例：
-
- ```JS
-EasyOPOA.homeFun=function(){
-	$("#contentDIV").html("<h1>欢迎使用！</h1>");
-}
 ```
+ 当OPOA没有从Ajax加载首页时，默认显示首页的处理函数。
+ 主要用于首页为静态内容的场景下，浏览器后退到首页时，首页静态内容无法更新问题。可在此函数中设置静态首页显示的内容。
+
+ > 示例：
+ >  ```JS
+> EasyOPOA.homeFun=function(){
+> 	$("#contentDIV").html("<h1>欢迎使用！</h1>");
+> }
+> ```
 
 
 - ### EasyOPOA.load
-  
- = function(hash, postData)
-
+```JS
+ = function(hash, [postData])
+```
  通过hash动作名称，手动进行加载。
 
  函数可传入两个参数：hash名称、提交到服务器的数据postData。
 
 
 - ### EasyOPOA.noConflict
-  
- = function(deep)
-
+```JS
+ = function([deep])
+```
  noConflict函数，将变量EasyOPOA和OPOA的控制权让渡给第一个实现它的那个库。
 				
  函数可传入一个参数：deep（为空或false仅释放OPOA命名空间， 为true 将完全释放EasyOPOA和OPOA命名空间）。
 
+ > 示例：
  > 运行这个函数将变量`OPOA`的控制权让渡给第一个实现它的那个库。
 > ```JS
 > var $OPOA=EasyOPOA.noConflict();
