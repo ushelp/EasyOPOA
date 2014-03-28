@@ -320,7 +320,7 @@ EasyOPOA框架暴漏了12个系统级的全局API。
 
 [在线Demo](http://www.lightfeel.com/easy/easyopoa/zh-cn/index.jsp#demo '在线 Demo')
 
-联系、反馈、定制、培训 Email：<in.think@gmail.com>
+联系、反馈、定制、培训 Email：<inthinkcolor@gmail.com>
 
 <a href="https://me.alipay.com/inthink" target="_blank">
 <img src="http://www.lightfeel.com/easy/images/donation.png" alt="通过支付宝捐赠" title="通过支付宝捐赠" height="37" width="150"></img>
