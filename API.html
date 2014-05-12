@@ -295,7 +295,8 @@ img {
 <p><strong>EasyOPOA框架秉持Easy的核心思想，为了保证对开发人员的友好，API非常简单，仅暴漏了有限的几个功能性API。</strong></p>
 <p>EasyOPOA框架的API主要分为两类：</p>
 <p><strong>1. OPOA实例（OPOA Instance）定义属性（11个）</strong></p>
-<p> 创建OPOA实例的属性API。EasyOPOA以Hash动作实例为框架核心，OPOA实例是Hash动作实例的三大组成元素（hash，url，OPOAInstance）之一。</p>
+<p> 创建OPOA实例的属性API。</p>
+<p> EasyOPOA以Hash动作实例为框架核心，OPOA实例是Hash动作实例的三大组成元素（hash，url，OPOAInstance）之一。</p>
 <p><strong>2. EasyOPOA框架API（12个）</strong></p>
 <p> 系统级的全局API。</p>
 <hr>
@@ -482,7 +483,7 @@ EasyOPOA.start(opoaList,actionMap2);</code></pre>
 <p>函数可传入两个参数：hash名称、loading处理对象。</p>
 <blockquote>
 <p>  <strong>loadingObject对象：</strong></p>
-<p>loadingObject处理对象包含4个loading状态：开始，成功，出错，结束。<br>不强迫要求同时定义4个状态，定义时，可根据需要仅定义部分。</p>
+<p>loadingObject处理对象包含4个loading状态：开始，成功，出错，结束（可在加载完成后，用来更新DOM状态和外观）。<br>不强迫要求同时定义4个状态，定义时，可根据需要仅定义部分。</p>
 <pre><code class="lang-JS">{
   //ajax请求开始
   &quot;start&quot;:function(hash, url, opoa, postData){},
@@ -545,7 +546,7 @@ EasyOPOA.start(opoaList,actionMap2);</code></pre>
 <h2 id="-">结束</h2>
 <p>如果您有更好意见，建议或想法，请联系我。</p>
 <p><a href="http://www.lightfeel.com/easy/easyopoa/zh-cn/index.jsp#demo" title="在线 Demo">在线Demo</a></p>
-<p>联系、反馈、定制、培训 Email：<a href="mailto:inthinkcolor@gmail.com">inthinkcolor@gmail.com</a></p>
+<p>联系、反馈、定制、培训 Email：<a href="&#x6d;&#x61;&#105;&#x6c;&#116;&#111;&#x3a;&#105;&#110;&#116;&#x68;&#x69;&#x6e;&#107;&#99;&#111;&#108;&#111;&#x72;&#x40;&#x67;&#x6d;&#x61;&#x69;&#108;&#x2e;&#99;&#x6f;&#109;">&#105;&#110;&#116;&#x68;&#x69;&#x6e;&#107;&#99;&#111;&#108;&#111;&#x72;&#x40;&#x67;&#x6d;&#x61;&#x69;&#108;&#x2e;&#99;&#x6f;&#109;</a></p>
 <p><a href="https://me.alipay.com/inthink" target="_blank"><br><img src="http://www.lightfeel.com/easy/images/donation.png" alt="通过支付宝捐赠" title="通过支付宝捐赠" height="37" width="150"></img><br></a></p>
 
 </body>
