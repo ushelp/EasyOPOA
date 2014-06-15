@@ -66,7 +66,7 @@ EasyOPOA框架从全局层面深度剖析和全新理解了OPOA程序，为OPOA�
 
 EasyOPOA框架对传统无序的OPOA程序开发进行了高度抽象，将EasyOPOA中的每一个请求看作一个“**Hash动作实例（Hash Action Instance）**”，并把与请求相关的配置以“**OPOA实例（OPOA Instance）**”的形式封装。
 
-
+![EasyOPOA frameWork structure](images/eo-1.png)
 
 
 - ### Hash动作实例（Hash Action Instance）：
@@ -85,6 +85,7 @@ Hash动作实例（Hash Action Instance）是EasyOPOA框架的的核心对象，
 **`OPOAInstance`**：OPOA实例，定义了当动作执行时，加载请求、渲染页面的方式和细节参数。
 
 #### 完成一个Hash动作实例的三个步骤：
+![EasyOPOA Hash Action Instance work](images/eo-2.png)
 
 1、使用`hash`触发Hash动作实例（hash值会显示在浏览器URL中`#hash`）
 
@@ -422,7 +423,7 @@ about.jsp：
 
 
 ## 4、EasyOPOA中hash、url、seURL(SearchEngine URL)三者配置和关系：
-
+![EasyOPOA hash url seURL](images/eo-3.png)
 - **hash**：
 是用户触发Hash动作实例的名称，负责触发动作，执行背后对应的Ajax请求。hash的值可以显示在浏览器地址栏。
 

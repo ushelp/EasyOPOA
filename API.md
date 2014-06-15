@@ -3,7 +3,7 @@
 **EasyOPOA框架秉持Easy的核心思想，为了保证对开发人员的友好，API非常简单，仅暴漏了有限的几个功能性API。**
 
 EasyOPOA框架的API主要分为两类：
-
+![EasyOPOA API](images/eo-4.png)
 **1. OPOA实例（OPOA Instance）定义属性（11个）**
 
  创建OPOA实例的属性API。EasyOPOA以Hash动作实例为框架核心，OPOA实例是Hash动作实例的三大组成元素（hash，url，OPOAInstance）之一。
@@ -25,8 +25,9 @@ EasyOPOA框架的API主要分为两类：
 
 - ### opoa实例默认定义：
 
+<input type="button" value="test" onclick="alert(window.document.body.innerHTML)"/>
  ```JS
- var opoa = {
+ var opoa = {  
 	// jQuery的DOM选择器，让DOM具有动作触发能力，自动创建Hash动作实例
 	// 单击（click）该DOM元素时即会触发一个Hash动作实例
 	// （可从选择的DOM中获得'Hash动作实例'所需的hash,url）
@@ -322,6 +323,10 @@ EasyOPOA框架暴漏了12个系统级的全局API。
 
 联系、反馈、定制、培训 Email：<inthinkcolor@gmail.com>
 
-<a href="https://me.alipay.com/inthink" target="_blank">
-<img src="http://www.lightfeel.com/easy/images/donation.png" alt="通过支付宝捐赠" title="通过支付宝捐赠" height="37" width="150"></img>
-</a>
+
+<p>
+<strong>支付宝钱包扫一扫捐助：</strong>
+</p>
+<p>
+
+<img alt="支付宝钱包扫一扫捐助" src="http://www.lightfeel.com/easy/images/s.png"  title="支付宝钱包扫一扫捐助"  height="256" width="256"></img>
