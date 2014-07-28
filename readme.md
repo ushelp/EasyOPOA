@@ -1394,7 +1394,7 @@ Ajax请求开始时显示LoadingDIV，请求结束后隐藏LoadingDIV。
 	  EasyOPOA.start([opoa]);
   </script>
 ```
-  **注意：**因为，所以请求的url页面无需重复引入easyopoa.js框架文件和其他已经在Home页面引入的依赖文件（在IE下这种行为会引发错误）。这其实也体现了OPOA程序高效易维护的特点。
+  **注意：**因为在主页面已经引入了easyopoap.js，所以请求的url页面无需重复引入easyopoa.js框架文件和其他已经在Home页面引入的依赖文件（在IE下这种行为会引发错误）。这其实也体现了OPOA程序高效易维护的特点。
 
 
 
