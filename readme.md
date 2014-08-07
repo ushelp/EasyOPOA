@@ -1836,9 +1836,9 @@ require(['easy.opoa','jquery','jqueryCookie'],function(EasyOPOA,$){
 
 BackBoneJS也是一个进行OPOA程序设计的有利技术。使用EasyOPOA和BackBoneJS都可以完成OPOA程序的设计。
 
-**从设计角度：**EasyOPOA是一个纯粹的OPOA程序构建框架；而BackboneJS本质是一个前端JS的MVC框架，而非OPOA框架。
+**从设计角度：**EasyOPOA侧重于为构建OPOA系统（System）；而BackBoneJS侧重于利用前端MVC构建系统中的某个模块 (Module)。
 
-**从技术角度：**EasyOPOA侧重于为构建OPOA系统；而BackBoneJS侧重于利用前端MVC构建系统中的某个模块。
+**从技术角度：**EasyOPOA是一个纯粹的OPOA程序构建框架；而BackboneJS本质是一个前端JS的MVC框架，而非OPOA框架。
 
 
 - ### BackboneJS：
