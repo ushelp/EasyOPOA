@@ -2,7 +2,7 @@
 
 Please enter [OPOA](https://github.com/ushelp/OPOA/) in English Version.
 
-EasyOPOA是一个进行OPOA程序开发的框架，为OPOA程序开发定义出了一套完整的标准概念和规范。仅需几步简单的配置即能够快速、灵活的开发出优质的OPOA程序。
+EasyOPOA是一个进行OPOA程序开发的框架，为OPOA程序开发定义出了一套完整的标准概念和规范。仅需几步简单的配置即能够快速、灵活的开发出优质的OPOA程序。能帮你简单快速的构建出像Gmail一样的复杂单页面程序。
 
 
 
