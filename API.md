@@ -319,7 +319,7 @@ EasyOPOA框架暴漏了12个系统级的全局API。
 如果您有更好意见，建议或想法，请联系我。
 
 
-[在线Demo](http://www.lightfeel.com/easy/easyopoa/zh-cn/index.jsp#demo '在线 Demo')
+[在线Demo](http://www.easyproject.cn/easyopoa/zh-cn/index.jsp#demo '在线 Demo')
 
 联系、反馈、定制、培训 Email：<inthinkcolor@gmail.com>
 
@@ -329,4 +329,4 @@ EasyOPOA框架暴漏了12个系统级的全局API。
 </p>
 <p>
 
-<img alt="支付宝钱包扫一扫捐助" src="http://www.lightfeel.com/easy/images/s.png"  title="支付宝钱包扫一扫捐助"  height="256" width="256"></img>
+<img alt="支付宝钱包扫一扫捐助" src="http://www.easyproject.cn/images/s.png"  title="支付宝钱包扫一扫捐助"  height="256" width="256"></img>

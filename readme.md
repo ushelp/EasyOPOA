@@ -46,7 +46,7 @@ EasyOPOA 秉承了作者始终坚持的“**More Easy, More Powerful.**”追求
 
 
 
-### [官网主页](http://www.lightfeel.com/easy/easyopoa/zh-cn/index.jsp 'EasyOPOA官网主页')
+### [官网主页](http://www.easyproject.cn/easyopoa/zh-cn/index.jsp 'EasyOPOA官网主页')
 
 
 
@@ -1907,7 +1907,7 @@ BackBoneJS也是一个进行OPOA程序设计的有利技术。使用EasyOPOA和B
 如果您有更好意见，建议或想法，请联系我。
 
 
-[在线Demo](http://www.lightfeel.com/easy/easyopoa/zh-cn/index.jsp#demo '在线 Demo')
+[在线Demo](http://www.easyproject.cn/easyopoa/zh-cn/index.jsp#demo '在线 Demo')
 
 联系、反馈、定制、培训 Email：<inthinkcolor@gmail.com>
 
@@ -1916,4 +1916,4 @@ BackBoneJS也是一个进行OPOA程序设计的有利技术。使用EasyOPOA和B
 </p>
 <p>
 
-<img alt="支付宝钱包扫一扫捐助" src="http://www.lightfeel.com/easy/images/s.png"  title="支付宝钱包扫一扫捐助"  height="256" width="256"></img>
+<img alt="支付宝钱包扫一扫捐助" src="http://www.easyproject.cn/images/s.png"  title="支付宝钱包扫一扫捐助"  height="256" width="256"></img>
