@@ -9,9 +9,9 @@
 "oneApplication",
 "onePageOneApplication",
 "easy",
-"easyproject","singlepage","single","page"
+"easyproject","singlepage","single","page","easyproject"
     ],
-    "version": "2.3.0",
+    "version": "2.3.1",
     "author": {
         "name": "Ray",
 "email": "inthinkcolor@gmail.com",
@@ -30,7 +30,7 @@
             "url": "https://github.com/srchulo/jQuery-Facets/blob/master/LICENSE"
         }
     ],
-    "bugs": "https://github.com/ushelp/EasyOPOA/issues",
+    "bugs": "http://www.easyproject.cn/easyopoa/zh-cn/index.jsp#donation",
     "homepage": "http://www.easyproject.cn/easyopoa/zh-cn/index.jsp#readme",
     "docs": "http://www.easyproject.cn/easyopoa/zh-cn/index.jsp#readme",
     "download": "https://github.com/ushelp/EasyOPOA/archive/master.zip",
